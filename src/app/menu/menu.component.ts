@@ -20,9 +20,23 @@ export class MenuComponent implements OnInit {
       name: "Achats"
     },
     {
+      icon: "store",
+      name: "Produits"
+    },
+    {
+      icon: "person_outline",
+      name: "Clients"
+    },
+    {
+      icon: "people_outline",
+      name: "Fournisseurs"
+    },
+
+    {
       icon: "assessment",
       name: "Rapport"
-    }
+    },
+    
   ]
   constructor() { }
 
