@@ -1,14 +1,22 @@
 <div class="base-content">
     <div class="icons-title">
-        <i class="material-icons"> menu </i>
+        <i class="material-icons" (click)="openMenu()"> menu </i>
         <h4>Telliya</h4>
     </div>
     <div class="search">
         <input type="search" placeholder="Que cherchez-vous ?">
     </div>
     <div class="options">
-        <i class="material-icons">info</i>
-        <i class="material-icons">settings</i>
+        <!-- <i class="material-icons">help_outline</i> -->
+        <!-- <img src="assets/icons/help.svg" alt="Gio" width="30px" height="30px" style="color: grey"> -->
+
+
+        <img src="assets/icons/help.svg" style=" width: 30px; height: 30px; " alt="">
+        <img src="assets/icons/setting.svg" style="width: 30px; height: 30px; " alt="">
         <div class="photo">G</div>
+    </div>
+    <div [ngClass]="menu_actions" (click)="hideMenu($event)" id="my-menu">
+        <div class="head"></div>
+        <div class="cont"></div>
     </div>
 </div>

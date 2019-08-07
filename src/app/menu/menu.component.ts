@@ -8,39 +8,44 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
   items = [
     {
-      icon: "home",
-      name: "Home"
+      icon: "home.svg",
+      name: "Home",
+      isSelected: true
     },
     {
-      icon: "assignment",
-      name: "Ventes"
+      icon: "vente.svg",
+      name: "Ventes",
+      isSelected: false
     },
     {
-      icon: "shopping_basket",
-      name: "Achats"
+      icon: "achat.svg",
+      name: "Achats",
+      isSelected: false
     },
     {
-      icon: "store",
-      name: "Produits"
+      icon: "stock.svg",
+      name: "Stocks",
+      isSelected: false
     },
     {
-      icon: "person_outline",
+      icon: "client.svg",
       name: "Clients"
     },
     {
-      icon: "people_outline",
-      name: "Fournisseurs"
-    },
-
-    {
-      icon: "assessment",
-      name: "Rapport"
+      icon: "fournisseurs.svg",
+      name: "Fournisseurs",
+      isSelected: false
     },
     
   ]
   constructor() { }
 
   ngOnInit() {
+  }
+
+  menuItemClickAction(item){
+    this.items.forEach(function(element,indext){element.isSelected = false;});
+      this.items.find((element) => element == item ).isSelected = true;
   }
 
 }
