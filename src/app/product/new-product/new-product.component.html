@@ -4,95 +4,224 @@
         <h3>Ajouter un produit</h3>
     </div>
         <form class="detaille">
-          <div class="information">
+            <div class="bloc">
             <h3>information du prouit</h3>
             <div class="champs">
-              <div class="title common">
-                <label for="title" >Titre</label>
-                  <input id="title" type="text" placeholder="Le Titre du produit">
-              </div>
-              <div class="categorie common">
-                    <label for="categorie" >Categorie</label>
-                    <select name="categorie" id="categorie">
-                        <option value="0">Riz</option>
-                        <option value="1">farine</option>
-                    </select>
-              </div>
-              <div class="price-qte common">
-                  <div class="prix">
-                      <label for="" >Prix</label>
-                      <input id="price" type="number" placeholder="Le Titre du produit">
-                  </div>
-                  <div class="quantite">
-                      <label for="qte" >Quantité</label>
-                      <input id="qte" type="number" placeholder="Le Titre du produit">
-                  </div>
-              </div>
-              <div class="price-qte common">
-                    <div class="Code-barre">
-                        <label for="Code-barre" >Code Barre</label>
-                        <input id="code-barre" type="text" placeholder="Code Barre">
-                    </div>
-                    <div class="marque">
-                            <label for="marque" >Marque</label>
-                            <input id="marque" type="text" placeholder="Le poid en kg">
-                    </div>
-                </div>
-            </div>
-          </div>
-          <div class="tiret"></div>
-          <div class="information">
-            <h3>Caracteristique du produit</h3>
-            <div class="champs">
-              <div class="price-qte common">
-                  <div class="taille">
-                      <label for="taille" >Taille</label>
-                      <input id="taille" type="text" placeholder="La taille en cm">
-                  </div>
-                  <div class="poid">
-                      <label for="poid" >Poid</label>
-                      <input id="poid" type="number" placeholder="Le poid en kg">
-                  </div>
-                  
-              </div>
-              <div class="price-qte common">
-                    <div class="conserve">
-                        <label for="conserve" >Conservation</label>
-                        <input id="conserve" type="text" placeholder="Temperature">
-                    </div>
-                    <div class="couleur">
-                            <label for="couleur" >Couleur</label>
-                            <select name="" id="couleur">
-                                <option value="2">Indefinie</option>
-                                <option value="0">Blanche</option>
-                                <option value="1">Rouge</option>
-                            </select>
+                    <div class="title common">
+                            <label for="title" >Titre</label>
+                            <input id="title" type="text" placeholder="Le Titre du produit" required>
                         </div>
+                <div class="title common">
+                    <label for="marcher" >Marcher</label>
+                    <select [(ngModel)]="valuer" name="value" id="marcher" required>
+                        <option *ngFor="let marcher of Marcher" [value]="marcher.id">{{marcher.name}}</option>  
+                    </select>
+                </div>
+                <div class="categorie common">
+                    <label for="categorie" >Categorie</label>
+                    <select name="categorie" id="categorie" required>
+                        <option *ngFor="let categorie of Marcher[valuer-1].categorie"  value="">{{categorie}}</option>
+                    </select>
+                </div>
+                
+                
+                <div class="price-qte common">
+                    <div class="label-select">
+                        <label for="price" >Coût</label>
+                        <input id="inpute" type="number" placeholder="Prix d'achat">
+                    </div>
+                    <div class="label-select">
+                      <label for="qte" >Prix de vente</label>
+                      <input id="inpute" type="number" placeholder="prix de vente">
+                    </div>
                 </div>
                 <div class="price-qte common">
-                        <div class="dte-exp">
-                            <label for="dte-exp" >Date Fabrication</label>
-                            <input id="dte-exp" type="date" placeholder="Date de fabrication">   
-                        </div>
-                        <div class="dte-exp">
-                            <label for="dte-exp" >Date expiration</label>
-                            <input id="dte-exp" type="date" placeholder="Date Expiration">   
-                        </div>
+                    <div class="label-select">
+                        <label for="Code-barre" >Stock</label>
+                        <input id="inpute" type="text" placeholder="Quantite de stock">
                     </div>
+                    <div class="label-select">
+                            <label for="marque" >limite de Stock</label>
+                            <input id="inpute" type="text" placeholder="Limite de stock">
+                    </div>
+                </div>
             </div>
           </div>
           <div class="tiret"></div>
-          <div class="information">
-                <h4>Description du produit</h4>
+          <div class="bloc">
+            <h3>Caracteristique du produit</h3>
+            <div class="champs">
+                <div class="price-qte common">
+                    <div class="label-select">
+                        <label for="taille" >Pays de fabrication</label>
+                        <select name="" id="inpute"></select>
+                    </div>
+                    <div class="label-select">
+                        <label for="poid" >Marque</label>
+                        <select  name="" id="inpute">
+                            <option *ngFor="let marque of Marcher[valuer-1].marque" value="">{{marque}}</option>
+                        </select>
+                    </div>  
+                </div>
+                <div class="price-qte common">
+                    <div id="poid" class="label-select">
+                        <div id="champs">
+                            <label for="dte-exp" >Poid</label>
+                            <input type="number" placeholder="Le poid ou le volume du produit">
+                        </div> 
+                        <div id="checbox">
+                            <label for="dte-exp" >Kg</label>
+                            <input type="checkbox">
+                        </div>
+                        
+                    </div>
+                    <div class="label-select">
+                        <label for="dte-exp" >Code Barre</label>
+                        <input id="inpute" type="text" placeholder="Code Barre">   
+                    </div>
+                </div>
+                <div class="price-qte common">
+                        <div class="label-select">
+                            <label for="dte-exp" >Emplacement du produit</label>
+                            <input type="text"> 
+                        </div>
+                        
+                    </div>
+                <div class="mode" *ngIf="valuer==='2'">
+                    <div class="price-qte common">
+                        <div class="label-select">
+                            <label for="dte-exp" >Sexe</label>
+                            <select name="" id="inpute"></select>   
+                        </div>
+                        <div class="label-select">
+                            <label for="dte-exp" >personnage</label>
+                            <select name="" id="inpute"></select>  
+                        </div>
+                    </div>
+                    <div class="price-qte common">
+                        <div class="label-select">
+                            <label for="dte-exp" >Couleur</label>
+                            <select name="" id="inpute"></select>   
+                        </div>
+                        <div class="label-select">
+                            <label for="dte-exp" >Pointure</label>
+                            <select name="" id="inpute"></select>  
+                        </div>
+                    </div>
+                </div>
+                <div class="informatique" *ngIf="valuer==='4'">
+                    <div class="price-qte common">
+                        <div class="label-select">
+                            <label for="dte-exp" >RAM</label>
+                            <select name="" id="inpute"></select>   
+                        </div>
+                        <div class="label-select">
+                            <label for="dte-exp" >Disque dur</label>
+                            <select name="" id="inpute"></select>  
+                        </div>
+                    </div>
+                    <div class="price-qte common">
+                        <div class="label-select">
+                            <label for="dte-exp" >Couleur</label>
+                            <select name="" id="inpute"></select>   
+                        </div>
+                        <div class="label-select">
+                            <label for="dte-exp" >Pouce</label>
+                            <select name="" id="inpute"></select>  
+                        </div>
+                    </div>
+                    <div class="price-qte common">
+                        <div class="label-select">
+                            <label for="dte-exp" >Vitesse du processeur</label>
+                            <select name="" id="inpute"></select>   
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="librairie" *ngIf="valuer==='3'">
+                    <div class="price-qte common">
+                        <div class="label-select">
+                            <label for="dte-exp" >Auteur</label>
+                            <input id="inpute" type="text" placeholder="Nom de l'auteur">   
+                        </div>
+                        <div class="label-select">
+                            <label for="dte-exp" >Edition</label>
+                            <input type="text" placeholder="Nom de l'edition"> 
+                        </div>
+                    </div>
+                    <div class="price-qte common">
+                        <div class="label-select">
+                            <label for="dte-exp" >Langue</label>
+                            <select name="" id="inpute"></select>   
+                        </div>
+                        <div class="label-select">
+                            <label for="dte-exp" >Format</label>
+                            <select name="" id="inpute"></select>  
+                        </div>
+                    </div>
+                    <div class="price-qte common">
+                        <div class="label-select">
+                            <label for="dte-exp" >Date de publication</label>
+                            <select name="" id="inpute"></select>   
+                        </div>
+                    </div>
+                </div>
+                <div class="Consommation" *ngIf="valuer==='1'">
+                    <div class="price-qte common">
+                        <div class="label-select">
+                            <label for="dte-exp" >Date de fabrication</label>
+                            <input name="" id="inpute" type="date">   
+                        </div>
+                        <div class="label-select">
+                            <label for="dte-exp" >Date d'expiration</label>
+                            <input name="" id="inpute" type="date">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+          </div>
+          <div class="tiret"></div>
+            <div class="bloc">
+                <h3>Photo du produit</h3>
+                <div class="containt-table" >
+                    <table>
+                        <tr>
+                            <td><i class="material-icons">photo</i></td>
+                            <td><i class="material-icons">photo</i></td>
+                            <td><i class="material-icons">photo</i></td>
+                            <td><i class="material-icons">photo</i></td>
+                        </tr>
+                        <tr >
+                           <td><i class="material-icons">photo</i></td>
+                           <td><i class="material-icons">photo</i></td>
+                           <td><i class="material-icons">photo</i></td>
+                           <td><i class="material-icons">photo</i></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" rowspan="2">
+                                <i id="add">
+                                    <button (click)="fileUpload.click()">Ajouter photo</button><br>
+                                    <span>Vous pouvez ajouter jusqu'a 8 photos</span>
+                                    <input hidden #fileUpload type="file" (change)="ficherupload($event.target.files)" >
+                                </i>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </div>
+            </div>
+          <div class="tiret"></div>
+          <div class="bloc">
+                <h3>Description du produit</h3>
                 <div class="champs">
-                  <div class="desc common">
-                      <div class="desc">
-                          <label for="desc" >Description</label>
-                         <textarea name="" id="" cols="30" rows="10"></textarea>
-                      </div>
-                      
+                  <div class="common">
+                        <label for="desc" >Description</label>
+                        <textarea maxlength="200" name="" id="" cols="10" rows="5" ></textarea>   
                   </div>
                 </div>
               </div>
+             
+              <div><button type="submit">Ajouter</button></div>
         </form>
 </div>

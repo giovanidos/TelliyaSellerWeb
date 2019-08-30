@@ -19,16 +19,24 @@ $func_menu_height: 45px;
         border-bottom: $border;
     }
     .telliya-menu {
+        @media screen and (max-width:600px){
+            display: none;
+        }
         width: $menu_width;
         height: calc(100% - #{$header_height});
         position: fixed;
         background-color: white;
         top: $header_height;
         border-right: $border;
+
     }
 }
 
 .content {
+    @media screen and (max-width:600px){
+        width: 100%;
+        left: 0;
+    }
     width: calc(100% - #{$menu_width});
     height: calc(100% - #{$header_height});
     position: relative;
