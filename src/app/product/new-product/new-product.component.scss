@@ -1,52 +1,47 @@
-.base-content{
+.base-content {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    .header{
+    .header {
         margin: 20px 0;
         font-size: 1.6em;
     }
-    .detaille{
+    .detaille {
         width: 80%;
         display: flex;
         flex-direction: column;
-        .information{
+        .information {
             width: 100%;
             display: flex;
             flex-direction: row;
-            .champs{
+            .champs {
                 width: 70%;
                 margin-left: auto;
-                .price-qte{
+                .price-qte {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
                 }
             }
-            
-           
         }
-        .desc{
-           
+        .desc {
             margin: 15px 0;
             display: flex;
             flex-direction: column;
-           
-
         }
-        .common{
-           height: 80px;
-           margin: 15px 0;
-           display: flex;
-           flex-direction: column;
-           label{
+        .common {
+            height: 80px;
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            label {
                 width: 100px;
                 font-size: 1.3em;
-
             }
-            input,select{
+            input,
+            select {
                 width: 100%;
                 height: 40px;
                 margin-top: 10px;
@@ -54,21 +49,35 @@
                 border-radius: 3px;
                 font-size: 1em;
                 padding: 3px;
-
-
-                
             }
-            
-                #price,#qte,#code-barre,#taille,#couleur,#marque,#poid,#dte-exp,#conserve,#title,#categorie,#desc{
-                    width: calc(100% - 10px) !important;
-                    display: flex;
-                    
-                }
-            .prix,.quantite,.Code-barre,.taille,.poid,.couleur,.marque,.dte-exp,.conserve{
-                width: 50%;
+            #price,
+            #qte,
+            #code-barre,
+            #taille,
+            #couleur,
+            #marque,
+            #poid,
+            #dte-exp,
+            #conserve,
+            #title,
+            #categorie,
+            #desc {
+                width: calc(100%) !important;
+                display: flex;
+            }
+            .prix,
+            .quantite,
+            .Code-barre,
+            .taille,
+            .poid,
+            .couleur,
+            .marque,
+            .dte-exp,
+            .conserve {
+                width: 49%;
             }
         }
-        .tiret{
+        .tiret {
             width: 60%;
             height: 5px;
             background-color: #ccd8ff;
@@ -76,7 +85,5 @@
             margin-left: auto;
             left: 15px;
         }
-
     }
-
 }

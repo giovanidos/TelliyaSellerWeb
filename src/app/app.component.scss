@@ -5,7 +5,7 @@ $menu_width: 200px;
 $func_menu_height: 45px;
 .base {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     position: relative;
     background-color: $content_color;
     // overflow-y: scroll;
