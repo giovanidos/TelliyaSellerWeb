@@ -1,25 +1,21 @@
-$content_color: #f5f7fa;
 $header_height: 60px;
 $border: 0.4px solid #eeeeee;
 $menu_width: 200px;
 $func_menu_height: 45px;
 .base {
     width: 100%;
-    min-height: 100%;
     position: relative;
-    background-color: $content_color;
-    // overflow-y: scroll;
     .telliya-header {
         width: 100%;
         height: $header_height;
         position: fixed;
-        background-color: white;
         z-index: 2;
         top: 0px;
         border-bottom: $border;
+        background-color: inherit;
     }
     .telliya-menu {
-        @media screen and (max-width:600px){
+        @media screen and (max-width: 600px) {
             display: none;
         }
         width: $menu_width;
@@ -28,29 +24,24 @@ $func_menu_height: 45px;
         background-color: white;
         top: $header_height;
         border-right: $border;
-
     }
 }
 
 .content {
-    @media screen and (max-width:600px){
+    @media screen and (max-width: 600px) {
         width: 100%;
         left: 0;
     }
     width: calc(100% - #{$menu_width});
-    height: calc(100% - #{$header_height});
     position: relative;
     top: $header_height;
     left: $menu_width;
-    // background-color: red;
+    background-color: inherit;
     .func-menu {
         position: fixed;
-        // top: 0px;
-        // left: 0px;
         width: 100%;
         height: $func_menu_height;
         background-color: white;
-        // border-bottom: $border;
         z-index: 1;
         box-shadow: 0px 4px 8px rgba($color: #000, $alpha: .05);
     }
@@ -60,8 +51,5 @@ $func_menu_height: 45px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        // top: 45px;
-        min-height: calc(100% - #{$func_menu_height});
-        // z-index: 1;
     }
 }
