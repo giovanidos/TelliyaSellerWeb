@@ -1,7 +1,10 @@
 <div class="menu-content">
-    <div class="func-item" *ngFor="let item of items" (click)="menuItemClickAction(item)" [class.func-item-isSelected]="item.isSelected">
+    <div class="telliya-name">
+        <span>Telliya</span>
+        <span class="app-name">Seller</span>
+    </div>
+    <div class="func-item " [class.current-func]="item.isSelected" *ngFor="let item of items">
         <!-- <i class="material-icons">{{item.icon}}</i> -->
-        <i><img src="assets/icons/{{item.icon}}" alt=""></i>
-        <span>{{item.name}}</span>
+        <i class="material-icons">{{item.icon}}</i>
     </div>
 </div>

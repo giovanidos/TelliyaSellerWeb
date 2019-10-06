@@ -1,22 +1,26 @@
-<div class="func-menu">
+<div class="func-header">
+    <h1>Mes produits</h1>
+    <input class="search" type="search" placeholder="Chercher un produit ici ">
 
 </div>
 <div class="func-content">
-    <h1>Mes produits</h1>
-    <div class="bloc">
-            <div id="trier">
-                    <h4> Trier par: </h4>
-                    <select [(ngModel)]=valeur>
+    <div class="categorie"></div>
+    <div class="product-list">
+
+    </div>
+    <!-- <div class="bloc">
+        <div id="trier">
+            <h4> Trier par: </h4>
+            <select [(ngModel)]=valeur>
                         <option value="1" name="Categorie">Categorie</option>
                         <option value="2">Commander</option>
                         <option value="3">Rupture de stok</option>
                         <option value="4">Promotion</option>
-                    </select>
-                    {{valeur}}
-            </div>
-            
-        <div >
-            
+                    </select> {{valeur}}
+        </div>
+
+        <div>
+
             <div class="repete" *ngIf="valeur==='1' || valeur===1">
                 <h3>Tout les categorie de produits</h3>
                 <div id="affiche-produit" *ngFor="let table of tableau">
@@ -41,7 +45,7 @@
                     <app-prototype-produit *ngFor="let ta of table"></app-prototype-produit>
                 </div>
             </div>
-            
+
         </div>
-    </div>
+    </div> -->
 </div>
