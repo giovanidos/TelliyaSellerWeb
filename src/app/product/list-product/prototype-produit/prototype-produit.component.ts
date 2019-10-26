@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-prototype-produit',
@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class PrototypeProduitComponent implements OnInit {
   star_table: string []=['star_border', 'star_border','star_border','star_border','star_border'];
 
-  point: number=14
-  ;
+  point: number=14;
   nbre_vote: number= 5;
   nbre_etoile:number;
+  @Input() price_product: number;
+  @Input() picture_product:string;
+  @Input() number_product: number;
+  @Input() name_product: string;
 
   constructor() {
 
@@ -31,6 +34,14 @@ export class PrototypeProduitComponent implements OnInit {
       this.star_table[Math.floor(this.nbre_etoile)]='star_half';
     }
     
+  }
+  getColor():string{
+    if(this.number_product<5){
+      return 'red';
+    }
+    else{
+      return 'green';
+    }
   }
 
 }

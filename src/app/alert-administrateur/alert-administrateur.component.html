@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="write_name">
+    <div class="parameter"></div>
+    <button class="cancel">X</button>
+  </div>
+  <form #parametre_user="ngForm" class="saisie">
+    <div class="profil">
+      <div class="picture">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAjlfeLh37xqg_hQ4abgDillfnU2cELpdQUGPIAuwPdJko4HlX&s" alt="">
+      </div>
+      <div class="write_picture">
+        <label for="">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam quia culpa
+           doloremque harum eveniet in odio ad blanditiis vitae corporis 
+        </label> 
+      </div>
+    </div>
+    <div class="user_name">
+      <div class="name">
+        <span>Nom:</span>
+        <div class="champs">
+          <input name="userfirst_name"   type="text" ngModel>
+          <button class="material-icons">edit</button>
+        </div>
+      </div>
+      <div class="name">
+          <span>Prenom:</span>
+          <div class="champs">
+            <input name="userlast_name" type="text" ngModel>
+            <button class="material-icons">edit</button>
+          </div>
+        </div>
+    </div>
+    <div class="telephone">
+        <div class="name">
+            <span>Num Telephone</span>
+            <div class="champs">
+              <input name="user_telephone" type="text" ngModel>
+              <button class="material-icons">edit</button>
+            </div>
+          </div>
+    </div>
+    <div class="telephone">
+        <div class="name">
+            <span>email</span>
+            <div class="champs">
+              <input name="user_email" type="text" ngModel>
+              <button class="material-icons">edit</button>
+            </div>
+          </div>
+    </div>
+    <div class="telephone">
+        <div class="name">
+            <span>Mots de passe</span>
+            <div class="champs">
+              <input name="user_old_password" type="text" ngModel>
+              <button class="material-icons">edit</button>
+            </div>
+          </div>
+    </div>
+    <div class="telephone">
+        <div class="name">
+            <span>Nouveau mots de passe</span>
+            <div class="champs">
+              <input name="user_new_password" type="text" ngModel>
+              <button class="material-icons">edit</button>
+            </div>
+          </div>
+    </div>
+    <div class="telephone">
+        <div class="name">
+            <span>Conf du mots de passe</span>
+            <div class="champs">
+              <input name="user_conf_password" type="text" ngModel>
+              <button class="material-icons">edit</button>
+            </div>
+        </div>
+    </div>
+    <button class="valider" type="submit" (click)="send(parametre_user)">Valider</button>
+  </form>
+  
+</div>

@@ -7,23 +7,24 @@
     <div class="option">
         <h3>Filtré</h3>
         <div class="filter">
-          <div class="items" *ngFor="let filter of filters ">
-              <input type="checkbox" name="choix" id="">
-              {{filter.name}}
-          </div>  
+              <mat-radio-button class="items" *ngFor="let filter of filters ">{{filter.name}}</mat-radio-button> 
         </div>
         <h3>Categorie</h3>
         <div class="categorie">
             <div class="items" *ngFor="let categorie of categories ">
-                <input type="checkbox" ngModel>
-                {{categorie.name}}
+                <mat-checkbox >{{categorie.name}}</mat-checkbox>
             </div>   
         </div>
     </div>
     <div class="product-list">
                 <h3>Tout les categorie de produits</h3>
                 <div id="affiche-produit" >
-                    <app-prototype-produit *ngFor="let table of tableau"></app-prototype-produit>
+                    <app-prototype-produit *ngFor="let table of tableau" 
+                    [name_product]=table.nom
+                    [number_product]=table.stock
+                    [price_product]=table.prix
+                    (click)="alertFiche_Product(table.nom, table.prix, table.stock)">
+                    </app-prototype-produit>
                 </div> 
     </div>
   
